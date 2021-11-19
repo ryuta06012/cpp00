@@ -4,6 +4,9 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <iostream>
+#include <stdio.h>
+#include <cstdlib>
 #include "contact.hpp"
 
 class PhoneBook
@@ -11,10 +14,17 @@ class PhoneBook
 public:
 	PhoneBook();
 	~PhoneBook();
-	void	AddContactData();
-	void	ContactInput();
+	void	AddContactData(void);
+	void	ContactInput(void);
+	void	FirstDelete(void);
+	void	SearchData(void);
+	void	IndexInfo(void);
+	void	FieldFormat(void);
+	void	PrintTable(std::string *lst);
+	void	InfoDetail(void);
+	void	PrintDetail(int index);
 private:
-	Contact	_contact_arry[9];
+	Contact	_ContactArry[8];
 	int _OldIndex;
 
 };
