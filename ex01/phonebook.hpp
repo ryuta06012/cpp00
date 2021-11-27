@@ -26,7 +26,6 @@ public:
 private:
 	Contact	_ContactArry[8];
 	int _OldIndex;
-
 };
 
 #endif
