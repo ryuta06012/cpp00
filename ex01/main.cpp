@@ -20,12 +20,16 @@ int main(){
 	{
 		std::cout << "Command >";
 		std::cin >> str;
-		if (std::cin.eof())
-			return (0);
-		if (str == "ADD")
+		if (std::cin.fail())
 		{
-			info.AddContactData();
+			if (std::cin.eof())
+				std::exit(1);
+			std::cout << "input error!\n" << std::endl;
+   			std::cin.clear();
+   		 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
+		if (str == "ADD")
+			info.AddContactData();
 		else if (str == "SEARCH")
 			info.SearchData();
 		else if (str == "EXIT")
@@ -33,6 +37,8 @@ int main(){
 			std::cout << "Close PhoneBook" << std::endl;
 			std::exit(0);
 		}
+		else
+			std::cout << "Please enter one of the following\t(ADD/SEARCH/EXIT)" << std::endl;
 	}
-    return 0;
+    return (0);
 }

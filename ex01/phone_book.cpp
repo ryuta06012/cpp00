@@ -107,6 +107,14 @@ void	PhoneBook::InfoDetail(void)
 	{
 		std::cout << "enter a index\t:";
 		std::cin >> str;
+		if (std::cin.fail())
+		{
+			if (std::cin.eof())
+				std::exit(1);
+			std::cout << "input error!\n" << std::endl;
+   			std::cin.clear();
+   		 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
 		index = str[0] - '0';
 		if (index < _OldIndex && (index >= 0 && index <= 7))
 		{
